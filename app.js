@@ -6,9 +6,9 @@ import CompOne from './src/components/comp-one';
 const App = () => {
     const [state, setState] = useState();
     return (
-        <View>
-            <Text>Abhay rana</Text>
-            <CompOne />
+        <View className="flex-1">
+            <Text className="bg-blue-400 text-red-300">Abhay rana</Text>
+            <CompOne className="h-4 w-4 p-4" />
         </View>
     );
 };
