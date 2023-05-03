@@ -1,7 +1,7 @@
 import {AppRegistry, LogBox} from 'react-native';
 import App from './App';
 import {name as appName} from './app.json';
-import {InitializeNotification} from './src/scripts/notification';
+// import {InitializeNotification} from './src/scripts/notification';
 
 LogBox.ignoreAllLogs(); //Ignore all log notifications
 
@@ -10,11 +10,11 @@ LogBox.ignoreAllLogs(); //Ignore all log notifications
 
 const Root = () => {
   return (
-    <Provider store={store}>
-      <GestureHandlerRootView style={{flex: 1}}>
+    // <Provider store={store}>
+      // <GestureHandlerRootView style={{flex: 1}}>
         <App />
-      </GestureHandlerRootView>
-    </Provider>
+      // </GestureHandlerRootView>
+    // </Provider>
   );
 };
 
