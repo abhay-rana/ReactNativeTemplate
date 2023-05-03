@@ -18,8 +18,18 @@
         "import/no-unresolved": "off",
         "react/react-in-jsx-scope": "off"
     },
+    "plugins": ["react", "react-native"],
     "parserOptions": {
         "sourceType": "module",
         "requireConfigFile": false // <== ADD THIS
+    },
+    "settings": {
+        "import/ignore": [
+            "node_modules/react-native/index\\.js$",
+            "react-native"
+        ],
+        "react": {
+            "version": "detect"
+        }
     }
 }
