@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { Text, View } from 'react-native';
+import 'react-native-gesture-handler';
 
 import tw from '~/styles/tailwind';
 

@@ -13,9 +13,7 @@ LogBox.ignoreAllLogs(); //Ignore all log notifications
 const Root = () => {
     return (
         // <Provider store={store}>
-        // <GestureHandlerRootView style={{flex: 1}}>
         <App />
-        // </GestureHandlerRootView>
         // </Provider>
     );
 };
