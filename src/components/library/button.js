@@ -22,16 +22,14 @@ const Button = ({
     regular,
     disabled,
     children,
-
+    font_style,
     size = 'large',
     noUpperCase = true,
     ripple,
     rippleDark,
     radial,
     onPress,
-    w200,
-    w400,
-    w500,
+
     w600,
     w700,
 }) => {
@@ -152,17 +150,17 @@ const Button = ({
             : size === 'small'
             ? { right: 5 }
             : size === 'large'
-            ? { right: 5 }
+            ? { right: 15 }
             : { right: 5 };
 
     const loaderSize =
         size === 'micro'
-            ? 12
-            : size === 'small'
             ? 15
-            : size === 'large'
+            : size === 'small'
             ? 18
-            : 16;
+            : size === 'large'
+            ? 25
+            : 19;
     const loaderColor =
         !link &&
         (variant === 'primary' ||
@@ -208,17 +206,20 @@ const Button = ({
                 pointerEvents="box-only"
             >
                 {childrenType === 'string' ? (
-                    <Text {...font_weight} style={tw`${buttonTextStyle}`}>
+                    <Text style={(tw`${buttonTextStyle}`, font_style)}>
                         {children}
                     </Text>
                 ) : (
                     children
                 )}
-                {/* {!loader ? null : (
+                {!loader ? null : (
                     <View style={{ position: 'absolute', ...loaderStyle }}>
-                        <Spinner size={loaderSize} color={loaderColor} />
+                        <ActivityIndicator
+                            size={loaderSize}
+                            color={loaderColor}
+                        />
                     </View>
-                )} */}
+                )}
             </View>
         </Ripple>
     );
@@ -235,6 +236,7 @@ Button.PropTypes = {
         'secondary',
     ]),
     shape: PropTypes.oneOf(['pill', 'rounded']),
+    font_style: PropTypes.object,
 };
 
 export default memo(Button);

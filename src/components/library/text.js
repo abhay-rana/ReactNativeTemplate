@@ -3,7 +3,6 @@ import React from 'react';
 import { Text as RNText, View } from 'react-native';
 
 import tw from '~/styles/tailwind';
-
 import {
     PRIMARY_FONT_BLACK,
     PRIMARY_FONT_BOLD,
@@ -11,7 +10,7 @@ import {
     SECONDARY_FONT_BLACK,
     SECONDARY_FONT_LIGHT,
     SECONDARY_FONT_REGULAR,
-} from '~/scripts/theme-var';
+} from '~/styles/theme-var';
 
 const primary_weight = {
     w300: {
@@ -107,10 +106,12 @@ const Text = ({
         color_class += ` text-warning`;
     }
 
+    const textStyle = Array.isArray(style) ? { ...style } : { ...style };
+
     return (
         <View>
             <RNText
-                style={[extra_class, classes, style, tw`${color_class}`]}
+                style={[extra_class, classes, textStyle, tw`${color_class}`]}
                 {...restProps}
             >
                 {children}
