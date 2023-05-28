@@ -6,8 +6,8 @@ module.exports = {
     theme: {
         fontFamily: {
             // add the font-size to 62.%% in .css file in html tag
-            poppins: ['Poppins-Regular', 'sans-serif'], //font links should be at the index.html scripts,
-            kalam: ['Kalam-Bold'],
+            poppins: ['Poppins-Black', 'sans-serif'], //font links should be at the index.html scripts,
+            kalam: ['Kalam-Bold', 'sans'],
             custom_font_name: ['ADELIA', 'cursive'],
             // font-poppins , font-adelia to use the custom fonts classes
         },
