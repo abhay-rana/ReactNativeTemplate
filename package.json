@@ -23,7 +23,8 @@
         "android-apk:release": "cd android && ./gradlew assembleRelease && cd ..",
         "android-apk:debug": "cd android && ./gradlew assembleDebug && cd ..",
         "format": "npx prettier --write .",
-        "clean": "rm -rf node_modules yarn.lock && yarn cache clean"
+        "clean": "rm -rf node_modules yarn.lock && yarn cache clean",
+        "depcheck": "npx npm-check"
     },
     "dependencies": {
         "@notifee/react-native": "^7.7.1",
