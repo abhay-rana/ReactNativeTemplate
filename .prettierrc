@@ -6,6 +6,7 @@
     "arrowParens": "always",
     "endOfLine": "auto",
     "importOrder": [
+        "^~/styles(.*)$",
         "^~/assets(.*)$",
         "^~/common(.*)$",
         "^~/routes(/.*)?$",

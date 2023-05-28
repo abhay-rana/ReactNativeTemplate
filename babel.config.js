@@ -11,8 +11,7 @@ module.exports = function (api) {
                     '~': './src',
                 },
             },
-        ],
-        'nativewind/babel'
+        ]
     ];
 
     if (!api.env('development')) {
