@@ -12,7 +12,10 @@ const App = () => {
     const [state, setState] = useState();
     return (
         <View style={tw`flex-1`}>
-            <Text style={tw`bg-blue-400 text-red-300`}>Abhay rana</Text>
+            <Text style={tw` text-3xl font-poppins`}>this is normal text</Text>
+            <Text style={tw` text-3xl font-poppins font-bold`}>
+                this is normal text
+            </Text>
             <CompTwo />
             <ArrowNext width={10} height={20} className="text-red-600" />
         </View>

@@ -4,6 +4,13 @@ module.exports = {
     content: ['./app.{js,jsx,ts,tsx}', './src/**/*.{js,jsx,ts,tsx}'],
 
     theme: {
+        fontFamily: {
+            // add the font-size to 62.%% in .css file in html tag
+            poppins: ['Poppins-Regular', 'sans-serif'], //font links should be at the index.html scripts,
+            kalam: ['Kalam-Bold'],
+            custom_font_name: ['ADELIA', 'cursive'],
+            // font-poppins , font-adelia to use the custom fonts classes
+        },
         extend: {
             colors: {
                 transparent: 'transparent',

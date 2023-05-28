@@ -17,6 +17,9 @@
 		2B995645476145BE95C4BFB0 /* Poppins-Black.ttf in Resources */ = {isa = PBXBuildFile; fileRef = DDA35A5D5CB04A459DD5C739 /* Poppins-Black.ttf */; };
 		27C03DD6EFD540398D9AA2CC /* Poppins-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 201EC475F00B45439B1DF485 /* Poppins-Medium.ttf */; };
 		0D6981F7E4094BC6B5F53DB8 /* Poppins-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 2DF3A7885A75420D8857085E /* Poppins-Regular.ttf */; };
+		B18C98A96BEE464AA5326201 /* Kalam-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = DA227A1C09EB404BB6B333C9 /* Kalam-Bold.ttf */; };
+		BDA5CABA35F9461082D7A99F /* Kalam-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = A7842CE85A834B8689C2BC42 /* Kalam-Light.ttf */; };
+		E9D27C60C53D492DB70FDBCD /* Kalam-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = C355E6624CA745AEA82A9305 /* Kalam-Regular.ttf */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -50,6 +53,9 @@
 		DDA35A5D5CB04A459DD5C739 /* Poppins-Black.ttf */ = {isa = PBXFileReference; name = "Poppins-Black.ttf"; path = "../assets/fonts/Poppins-Black.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
 		201EC475F00B45439B1DF485 /* Poppins-Medium.ttf */ = {isa = PBXFileReference; name = "Poppins-Medium.ttf"; path = "../assets/fonts/Poppins-Medium.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
 		2DF3A7885A75420D8857085E /* Poppins-Regular.ttf */ = {isa = PBXFileReference; name = "Poppins-Regular.ttf"; path = "../assets/fonts/Poppins-Regular.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		DA227A1C09EB404BB6B333C9 /* Kalam-Bold.ttf */ = {isa = PBXFileReference; name = "Kalam-Bold.ttf"; path = "../assets/fonts/Kalam-Bold.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		A7842CE85A834B8689C2BC42 /* Kalam-Light.ttf */ = {isa = PBXFileReference; name = "Kalam-Light.ttf"; path = "../assets/fonts/Kalam-Light.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		C355E6624CA745AEA82A9305 /* Kalam-Regular.ttf */ = {isa = PBXFileReference; name = "Kalam-Regular.ttf"; path = "../assets/fonts/Kalam-Regular.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -161,6 +167,9 @@
 				DDA35A5D5CB04A459DD5C739 /* Poppins-Black.ttf */,
 				201EC475F00B45439B1DF485 /* Poppins-Medium.ttf */,
 				2DF3A7885A75420D8857085E /* Poppins-Regular.ttf */,
+				DA227A1C09EB404BB6B333C9 /* Kalam-Bold.ttf */,
+				A7842CE85A834B8689C2BC42 /* Kalam-Light.ttf */,
+				C355E6624CA745AEA82A9305 /* Kalam-Regular.ttf */,
 			);
 			name = Resources;
 			sourceTree = "<group>";
@@ -265,6 +274,9 @@
 				2B995645476145BE95C4BFB0 /* Poppins-Black.ttf in Resources */,
 				27C03DD6EFD540398D9AA2CC /* Poppins-Medium.ttf in Resources */,
 				0D6981F7E4094BC6B5F53DB8 /* Poppins-Regular.ttf in Resources */,
+				B18C98A96BEE464AA5326201 /* Kalam-Bold.ttf in Resources */,
+				BDA5CABA35F9461082D7A99F /* Kalam-Light.ttf in Resources */,
+				E9D27C60C53D492DB70FDBCD /* Kalam-Regular.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

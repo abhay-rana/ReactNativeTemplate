@@ -1,7 +1,11 @@
 apply plugin: "com.android.application"
 apply plugin: "com.facebook.react"
 
+apply plugin: 'com.google.gms.google-services' // <- for firebase push notification
+
 import com.android.build.OutputFile
+
+
 
 /**
  * This is the configuration block to customize your React Native Android app.
@@ -153,6 +157,13 @@ dependencies {
     implementation("com.facebook.react:react-android")
 
     implementation("androidx.swiperefreshlayout:swiperefreshlayout:1.0.0")
+    // FOR GIFF AND WEBP SUPPORT
+    // For animated GIF support
+    implementation 'com.facebook.fresco:animated-gif:2.5.0'
+    // For WebP support, including animated WebP
+    implementation 'com.facebook.fresco:animated-webp:2.5.0'
+    implementation 'com.facebook.fresco:webpsupport:2.5.0'
+    // END GIFF AND WEB SUPPORT
 
     debugImplementation("com.facebook.flipper:flipper:${FLIPPER_VERSION}")
     debugImplementation("com.facebook.flipper:flipper-network-plugin:${FLIPPER_VERSION}") {
