@@ -81,12 +81,13 @@ const Text = ({
     font_type = 'primary',
     font_weight,
     color,
-    ...props
+    ...restProps
 }) => {
     let extra_class;
     extra_class = getStyle[as];
+
     const classes = getTextStyle(font_type, font_weight);
-    console.log({ extra_class, classes, style });
+
     let color_class;
     if (color === 'primary') {
         color_class += ` text-primary`;
@@ -103,9 +104,13 @@ const Text = ({
     } else if (color === 'warning') {
         color_class += ` text-warning`;
     }
+
     return (
         <View>
-            <RNText style={[extra_class, classes, style, tw`${color_class}`]}>
+            <RNText
+                style={[extra_class, classes, style, tw`${color_class}`]}
+                {...restProps}
+            >
                 {children}
             </RNText>
         </View>
