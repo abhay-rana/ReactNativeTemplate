@@ -80,11 +80,13 @@ const Text = ({
     as = 'p',
     font_type = 'primary',
     font_weight,
+    font_size,
     color,
     ...restProps
 }) => {
     let extra_class;
-    extra_class = getStyle[as];
+    extra_class = { ...getStyle[as] };
+    if (font_size) extra_class = { ...extra_class, fontSize: font_size };
 
     const classes = getTextStyle(font_type, font_weight);
 
@@ -122,7 +124,8 @@ Text.propTypes = {
     style: PropTypes.oneOfType([PropTypes.array, PropTypes.object]),
     as: PropTypes.oneOf(['h1', 'h2', 'p']),
     font_type: PropTypes.oneOf(['primary', 'secondary']),
-    font_weight: PropTypes.oneOf(['w100', 'w300', 'w700', 'w900']),
+    font_weight: PropTypes.oneOf(['w300', 'w500', 'w700']),
+    font_size: PropTypes.number,
     color: PropTypes.oneOf([
         'primary',
         'secondary',
