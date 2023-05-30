@@ -187,6 +187,9 @@ const Button = ({
         //   else debouncedPress();
     }
 
+    let extra_class = tw`${buttonTextStyle}`;
+    extra_class = { ...extra_class, ...font_style };
+
     const childrenType = typeof children;
 
     return (
@@ -206,9 +209,7 @@ const Button = ({
                 pointerEvents="box-only"
             >
                 {childrenType === 'string' ? (
-                    <Text style={(tw`${buttonTextStyle}`, font_style)}>
-                        {children}
-                    </Text>
+                    <Text style={extra_class}>{children}</Text>
                 ) : (
                     children
                 )}
