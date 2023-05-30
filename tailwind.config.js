@@ -5,11 +5,13 @@ module.exports = {
 
     theme: {
         fontFamily: {
-            // add the font-size to 62.%% in .css file in html tag
-            poppins: ['Poppins-Black', 'sans-serif'], //font links should be at the index.html scripts,
-            kalam: ['Kalam-Bold', 'sans'],
-            custom_font_name: ['ADELIA', 'cursive'],
-            // font-poppins , font-adelia to use the custom fonts classes
+            // primary text and the secondary text
+            400: 'Poppins-Regular',
+            500: 'Poppins-Medium',
+            700: 'Poppins-Black',
+            401: 'Kalam-Light',
+            501: 'Kalam-Regular',
+            701: 'Kalam-Bold',
         },
         extend: {
             colors: {
@@ -46,12 +48,6 @@ module.exports = {
                 16: '16',
                 18: '18',
                 24: '24',
-            },
-            fontWeight: {
-                400: 500,
-                500: 800,
-                600: 600,
-                700: 700,
             },
 
             spacing: {
