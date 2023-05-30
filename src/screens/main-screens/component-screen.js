@@ -24,12 +24,17 @@ const ComponentScreen = () => {
             >
                 TestScreen
             </Button>
-            <Text style={tw`text-10`}>Hello this is one</Text>
-            <Text style={tw`text-11`}>Hello this is one</Text>
-            <Text style={tw`text-12`}>Hello this is one</Text>
-            <Text style={tw`text-16`}>Hello this is one</Text>
-            <Text style={tw`text-lg`}>Hello this is one</Text>
-            <Text style={tw`text-24`}>Hello this is one</Text>
+            <Text style={tw`text-10 font-400`}>Hello this is one</Text>
+            <Text style={tw`text-11 font-500`}>Hello this is one</Text>
+            <Text style={tw`text-12 font-600`}>Hello this is one</Text>
+            <Text style={tw`text-14 font-400`}>Hello this is one</Text>
+            <Text style={tw`text-16 font-500`} color="danger">
+                Hello this is one
+            </Text>
+            <Text style={tw`text-18 font-600`} color="gray">
+                Hello this is one
+            </Text>
+            <Text style={tw`text-24 font-700`}>Hello this is one</Text>
         </View>
     );
 };

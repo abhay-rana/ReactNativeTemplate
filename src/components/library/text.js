@@ -80,7 +80,7 @@ const Text = ({
     font_type = 'primary',
     font_weight,
     font_size,
-    color,
+    color = 'black',
     ...restProps
 }) => {
     let extra_class;
@@ -104,6 +104,8 @@ const Text = ({
         color_class += ` text-success`;
     } else if (color === 'warning') {
         color_class += ` text-warning`;
+    } else if (color === 'gray') {
+        color_class += ` text-gray`;
     }
 
     const textStyle = Array.isArray(style) ? { ...style } : { ...style };
@@ -111,7 +113,7 @@ const Text = ({
     return (
         <View>
             <RNText
-                style={[extra_class, classes, textStyle, tw`${color_class}`]}
+                style={[extra_class, classes, tw`${color_class}`, textStyle]}
                 {...restProps}
             >
                 {children}
@@ -135,6 +137,7 @@ Text.propTypes = {
         'black',
         'warning',
         'white',
+        'gray',
     ]),
 };
 
