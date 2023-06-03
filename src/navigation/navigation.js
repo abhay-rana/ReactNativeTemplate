@@ -1,11 +1,12 @@
 import { NavigationContainer } from '@react-navigation/native';
-import { createStackNavigator } from '@react-navigation/stack';
+import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import { navigationRef } from '~/hooks/useLocation';
 import {
     CHECKBOX_SCREEN,
     COMPONENT_SCREEN,
     INPUT_SCREEN,
     TEXT_SCREEN,
+    TOAST_SCREEN,
 } from '~/navigation/navigation-constant';
 
 import CheckboxScreen from '~/screens/main-screens/checkbox-screen';
@@ -13,7 +14,7 @@ import ComponentScreen from '~/screens/main-screens/component-screen';
 import InputScreen from '~/screens/main-screens/input-screen';
 import TextScreen from '~/screens/main-screens/text-screen';
 
-const Stack = createStackNavigator();
+const Stack = createNativeStackNavigator();
 
 const Navigation = (props) => {
     return (
@@ -38,6 +39,7 @@ const Navigation = (props) => {
                     name={CHECKBOX_SCREEN}
                     component={CheckboxScreen}
                 />
+                <Stack.Screen name={TOAST_SCREEN} component={CheckboxScreen} />
             </Stack.Navigator>
         </NavigationContainer>
     );

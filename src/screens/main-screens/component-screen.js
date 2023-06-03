@@ -1,13 +1,16 @@
 import { useNavigation } from '@react-navigation/native';
 import React from 'react';
 import { View } from 'react-native';
-import Button from '~/components/library/button';
 import {
     CHECKBOX_SCREEN,
     INPUT_SCREEN,
     TEXT_SCREEN,
+    TOAST_SCREEN,
 } from '~/navigation/navigation-constant';
+
 import tw from '~/styles/tailwind';
+
+import Button from '~/components/library/button';
 
 const ComponentScreen = () => {
     const navigation = useNavigation();
@@ -30,6 +33,12 @@ const ComponentScreen = () => {
                 variant="danger"
             >
                 InputScreen
+            </Button>
+            <Button
+                onPress={() => navigation.navigate(TOAST_SCREEN)}
+                style={tw`bg-blue-300`}
+            >
+                ToastScreen
             </Button>
         </View>
     );
