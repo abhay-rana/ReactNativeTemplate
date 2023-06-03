@@ -1,4 +1,7 @@
 import { AppRegistry, LogBox } from 'react-native';
+import Toast from 'react-native-toast-message';
+
+import { config } from '~/scripts/toast';
 
 import App from './app';
 import { name as appName } from './app.json';
@@ -12,9 +15,10 @@ LogBox.ignoreAllLogs(); //Ignore all log notifications
 
 const Root = () => {
     return (
-        // <Provider store={store}>
-        <App />
-        // </Provider>
+        <>
+            <App />
+            <Toast config={config} />
+        </>
     );
 };
 
