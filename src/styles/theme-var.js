@@ -2,10 +2,10 @@ import { Dimensions, Platform } from 'react-native';
 
 export const PRIMARY_FONT_BLACK = 'Poppins-Black';
 export const PRIMARY_FONT_BOLD = 'Poppins-Medium';
-export const PRIMARY_FONT_SEMIBOLD = 'Poppins-Regular';
-export const SECONDARY_FONT_BLACK = 'Kalam-Bold';
-export const SECONDARY_FONT_REGULAR = 'Kalam-Regular';
-export const SECONDARY_FONT_LIGHT = 'Kalam-Light';
+export const PRIMARY_FONT_REGULAR = 'Poppins-Regular';
+export const SECONDARY_FONT_BOLD = 'Kalam-Bold';
+export const SECONDARY_FONT_MEDIUM = 'Kalam-Regular';
+export const SECONDARY_FONT_REGULAR = 'Kalam-Light';
 
 const themeVar = {
     primary: { default: '#007ECE', dark: '#0b7670', light: '#e1fdf8' },

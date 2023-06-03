@@ -6,15 +6,15 @@ import tw from '~/styles/tailwind';
 import {
     PRIMARY_FONT_BLACK,
     PRIMARY_FONT_BOLD,
-    PRIMARY_FONT_SEMIBOLD,
-    SECONDARY_FONT_BLACK,
-    SECONDARY_FONT_LIGHT,
-    SECONDARY_FONT_REGULAR,
+    PRIMARY_FONT_REGULAR,
+    SECONDARY_FONT_BOLD,
+    SECONDARY_FONT_MEDIUM,
+    
 } from '~/styles/theme-var';
 
 const primary_weight = {
     w300: {
-        fontFamily: PRIMARY_FONT_SEMIBOLD,
+        fontFamily: PRIMARY_FONT_REGULAR,
     },
     w500: {
         fontFamily: PRIMARY_FONT_BOLD,
@@ -25,13 +25,13 @@ const primary_weight = {
 };
 const secondary_weight = {
     w300: {
-        fontFamily: SECONDARY_FONT_LIGHT,
+        fontFamily: SECONDARY_FONT_MEDIUM,
     },
     w500: {
-        fontFamily: SECONDARY_FONT_REGULAR,
+        fontFamily: SECONDARY_FONT_MEDIUM,
     },
     w700: {
-        fontFamily: SECONDARY_FONT_BLACK,
+        fontFamily: SECONDARY_FONT_BOLD,
     },
 };
 
@@ -45,28 +45,28 @@ const getStyle = {
         fontSize: 20,
     },
     h3: {
-        fontFamily: PRIMARY_FONT_SEMIBOLD,
+        fontFamily: PRIMARY_FONT_REGULAR,
         fontSize: 18,
     },
     p: {
-        fontFamily: PRIMARY_FONT_SEMIBOLD,
+        fontFamily: PRIMARY_FONT_REGULAR,
         fontSize: 16,
     },
     p2: {
-        fontFamily: SECONDARY_FONT_BLACK,
+        fontFamily: SECONDARY_FONT_BOLD,
         fontSize: 16,
     },
 };
 const getTextStyle = (type, weight) => {
     if (type === 'primary' && !weight) {
         return {
-            fontFamily: PRIMARY_FONT_SEMIBOLD,
+            fontFamily: PRIMARY_FONT_REGULAR,
         };
     } else if (type === 'primary' && weight) {
         return primary_weight[weight];
     } else if (type === 'secondary' && !weight) {
         return {
-            fontFamily: SECONDARY_FONT_LIGHT,
+            fontFamily: SECONDARY_FONT_MEDIUM,
         };
     } else if (type === 'secondary' && weight) {
         return secondary_weight[weight];

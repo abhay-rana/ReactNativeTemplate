@@ -1,17 +1,22 @@
 /** @type {import('tailwindcss').Config} */
 
+const { PRIMARY_FONT_SEMIBOLD, SECONDARY_FONT_MEDIUM,PRIMARY_FONT_BOLD,PRIMARY_FONT_REGULAR,PRIMARY_FONT_MEDIUM,SECONDARY_FONT_BOLD,SECONDARY_FONT_REGULAR } = require('./src/styles/theme-var');
+
+
 module.exports = {
     content: ['./app.{js,jsx,ts,tsx}', './src/**/*.{js,jsx,ts,tsx}'],
 
     theme: {
         fontFamily: {
             // primary text and the secondary text
-            400: 'Poppins-Regular',
-            500: 'Poppins-Medium',
-            700: 'Poppins-Black',
-            401: 'Kalam-Light',
-            501: 'Kalam-Regular',
-            701: 'Kalam-Bold',
+            400: PRIMARY_FONT_REGULAR,
+            500: PRIMARY_FONT_MEDIUM,
+            600:PRIMARY_FONT_SEMIBOLD,
+            700: PRIMARY_FONT_BOLD,
+            401: SECONDARY_FONT_REGULAR,
+            501: SECONDARY_FONT_MEDIUM,
+            601: SECONDARY_FONT_BOLD,
+            701: SECONDARY_FONT_BOLD,
         },
         extend: {
             colors: {
