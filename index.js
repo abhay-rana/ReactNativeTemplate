@@ -16,8 +16,10 @@ LogBox.ignoreAllLogs(); //Ignore all log notifications
 const Root = () => {
     return (
         <>
+            {/* <Provider store={store}> */}
             <App />
             <Toast config={config} />
+            {/* </Provider> */}
         </>
     );
 };

@@ -1,7 +1,6 @@
 import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import { enableScreens } from 'react-native-screens';
-import { navigationRef } from '~/hooks/useLocation';
 import {
     CHECKBOX_SCREEN,
     COMPONENT_SCREEN,
@@ -15,6 +14,8 @@ import ComponentScreen from '~/screens/main-screens/component-screen';
 import InputScreen from '~/screens/main-screens/input-screen';
 import TextScreen from '~/screens/main-screens/text-screen';
 import ToastScreen from '~/screens/main-screens/toast-screen';
+
+import { navigationRef } from '~/hooks/useLocation';
 
 enableScreens();
 const Stack = createNativeStackNavigator();

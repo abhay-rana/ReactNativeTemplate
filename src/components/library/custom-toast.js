@@ -12,9 +12,7 @@ const CustomToast = ({
     error,
     action_text,
     action_callback = () => {},
-    ...restProps
 }) => {
-    console.log('props', restProps);
     return (
         <View
             style={[
