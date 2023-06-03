@@ -1,8 +1,10 @@
 import React from 'react';
 import { View } from 'react-native';
+
+import tw from '~/styles/tailwind';
+
 import Text from '~/components/library/text';
 import TextInput from '~/components/library/text-input';
-import tw from '~/styles/tailwind';
 
 const InputScreen = () => {
     return (
@@ -39,6 +41,16 @@ const InputScreen = () => {
                     large
                     type="password"
                     bordered
+                />
+            </View>
+            <View style={tw`mt-4`}>
+                <TextInput
+                    label="this is label"
+                    placeholder="Enter Password"
+                    large
+                    type="password"
+                    bordered
+                    disabled
                 />
             </View>
         </View>

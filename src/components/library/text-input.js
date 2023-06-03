@@ -1,10 +1,13 @@
 import React, { memo, useState } from 'react';
 import { TextInput as RNTextInput, TouchableOpacity, View } from 'react-native';
-import EyeCloseSvg from '~/assets/svg/eye-close.svg';
-import EyeOpenSvg from '~/assets/svg/eye-open.svg';
-import Text from '~/components/library/text';
+
 import tw from '~/styles/tailwind';
 import themeVar from '~/styles/theme-var';
+
+import EyeCloseSvg from '~/assets/svg/eye-close.svg';
+import EyeOpenSvg from '~/assets/svg/eye-open.svg';
+
+import Text from '~/components/library/text';
 
 const TextInput = React.forwardRef(
     (
@@ -87,18 +90,15 @@ const TextInput = React.forwardRef(
             toggleShowPassword(!show_password);
         };
         return (
-            <View style={tw`relative`}>
+            <View style={[tw`relative`]}>
                 {!!label ? (
-                    <Text
-                        style={[tw`text-sm`, { color: focusStyle.labelColor }]}
-                    >
-                        {label}
-                    </Text>
+                    <Text style={disabled && tw`text-gray-400`}>{label}</Text>
                 ) : null}
                 <View style={tw`relative`}>
                     <RNTextInput
                         ref={ref}
                         multiline={multiline}
+                        editable={!disabled}
                         value={value?.toString()}
                         onFocus={onInputFocus}
                         onBlur={onInputBlur}
@@ -107,6 +107,7 @@ const TextInput = React.forwardRef(
                         style={[
                             tw`${input_style}`,
                             style,
+                            disabled && tw`bg-gray-200`,
                             {
                                 fontFamily: props.w200
                                     ? 'ProximaNovaLight'
@@ -121,10 +122,13 @@ const TextInput = React.forwardRef(
                                     : 'ProximaNovaSemiBold',
                             },
                             !!bordered
-                                ? { borderColor: focusStyle.borderColor }
+                                ? {
+                                      borderColor: focusStyle.borderColor,
+                                  }
                                 : !!stacked
                                 ? { borderBottomColor: focusStyle.borderColor }
                                 : null,
+                            disabled && bordered && tw`border-gray-400`,
                         ]}
                         placeholderTextColor="#b7b7b7"
                         {...props}
@@ -136,6 +140,7 @@ const TextInput = React.forwardRef(
                                     disabled ? 'text-gray-400' : 'text-gray-600'
                                 }`}
                                 onPress={togglePasswordVisibility}
+                                disabled={disabled}
                             >
                                 <EyeOpenSvg width={20} height={20} />
                             </TouchableOpacity>
@@ -145,6 +150,7 @@ const TextInput = React.forwardRef(
                                     disabled ? 'text-gray-400' : 'text-gray-600'
                                 }`}
                                 onPress={togglePasswordVisibility}
+                                disabled={disabled}
                             >
                                 <EyeCloseSvg width={20} height={20} />
                             </TouchableOpacity>
