@@ -5,11 +5,12 @@ import thunk from 'redux-thunk';
 
 // import { REHYDRATION_SET_REHYDRATION_VALUE } from '~/actions/types';
 // import { CounterReducer } from '~/reducers/counter-reducer';
-// import { RehydrationReducer } from '~/reducers/rehydration-reducer';
+import { RehydrationReducer } from '~/reducers/rehydration-reducer';
+
 import { APP_MODE } from '~/env';
 
 const reducers = combineReducers({
-    // rehydration_store: RehydrationReducer,
+    rehydration_store: RehydrationReducer,
     // counter_store: CounterReducer,
 });
 

@@ -1,5 +1,6 @@
 import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
+import { useEffect } from 'react';
 import { enableScreens } from 'react-native-screens';
 import {
     CHECKBOX_SCREEN,
@@ -17,18 +18,29 @@ import RadioScreen from '~/screens/main-screens/radio-screen';
 import TextScreen from '~/screens/main-screens/text-screen';
 import ToastScreen from '~/screens/main-screens/toast-screen';
 
+import { SetScreenName } from '~/scripts/navigation-util';
+
 import { navigationRef } from '~/hooks/useLocation';
 
 enableScreens();
 const Stack = createNativeStackNavigator();
 
 const Navigation = (props) => {
+    useEffect(() => {
+        // set the screen name in the reducer on the first time of the page load
+        SetScreenName();
+    }, []);
     return (
         <NavigationContainer ref={navigationRef}>
             <Stack.Navigator
                 initialRouteName={COMPONENT_SCREEN}
                 screenOptions={{
                     headerShown: false,
+                }}
+                screenListeners={{
+                    state: (e) => {
+                        SetScreenName(e.data);
+                    },
                 }}
             >
                 {/* OnBoarding Screen */}
