@@ -5,6 +5,7 @@ import {
     CHECKBOX_SCREEN,
     COMPONENT_SCREEN,
     INPUT_SCREEN,
+    RADIO_SCREEN,
     TEXT_SCREEN,
     TOAST_SCREEN,
 } from '~/navigation/navigation-constant';
@@ -12,6 +13,7 @@ import {
 import CheckboxScreen from '~/screens/main-screens/checkbox-screen';
 import ComponentScreen from '~/screens/main-screens/component-screen';
 import InputScreen from '~/screens/main-screens/input-screen';
+import RadioScreen from '~/screens/main-screens/radio-screen';
 import TextScreen from '~/screens/main-screens/text-screen';
 import ToastScreen from '~/screens/main-screens/toast-screen';
 
@@ -44,6 +46,7 @@ const Navigation = (props) => {
                     component={CheckboxScreen}
                 />
                 <Stack.Screen name={TOAST_SCREEN} component={ToastScreen} />
+                <Stack.Screen name={RADIO_SCREEN} component={RadioScreen} />
             </Stack.Navigator>
         </NavigationContainer>
     );

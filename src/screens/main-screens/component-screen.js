@@ -4,6 +4,7 @@ import { View } from 'react-native';
 import {
     CHECKBOX_SCREEN,
     INPUT_SCREEN,
+    RADIO_SCREEN,
     TEXT_SCREEN,
     TOAST_SCREEN,
 } from '~/navigation/navigation-constant';
@@ -39,6 +40,12 @@ const ComponentScreen = () => {
                 style={tw`bg-blue-300`}
             >
                 ToastScreen
+            </Button>
+            <Button
+                onPress={() => navigation.navigate(RADIO_SCREEN)}
+                style={tw`bg-blue-300`}
+            >
+                RadioScreen
             </Button>
         </View>
     );
