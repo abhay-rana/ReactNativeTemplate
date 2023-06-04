@@ -3,7 +3,9 @@ import offlineConfig from '@redux-offline/redux-offline/lib/defaults';
 import { applyMiddleware, combineReducers, compose, createStore } from 'redux';
 import thunk from 'redux-thunk';
 
-// import { REHYDRATION_SET_REHYDRATION_VALUE } from '~/actions/types';
+import { REHYDRATION_SET_REHYDRATION_VALUE } from '~/actions/types';
+
+import { ContainerReducer } from '~/reducers/container-reducer';
 // import { CounterReducer } from '~/reducers/counter-reducer';
 import { RehydrationReducer } from '~/reducers/rehydration-reducer';
 
@@ -11,6 +13,7 @@ import { APP_MODE } from '~/env';
 
 const reducers = combineReducers({
     rehydration_store: RehydrationReducer,
+    container_store: ContainerReducer,
     // counter_store: CounterReducer,
 });
 
@@ -23,7 +26,7 @@ let custom_config = {
     },
     persistCallback: () => {
         // setting is_rehydration value so that our screen renders when rehydration completes
-        // store.dispatch({ type: REHYDRATION_SET_REHYDRATION_VALUE });
+        store.dispatch({ type: REHYDRATION_SET_REHYDRATION_VALUE });
     },
 };
 

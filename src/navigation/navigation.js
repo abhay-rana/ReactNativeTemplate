@@ -28,6 +28,7 @@ const Stack = createNativeStackNavigator();
 const Navigation = (props) => {
     useEffect(() => {
         // set the screen name in the reducer on the first time of the page load
+        console.log('set the screen name');
         SetScreenName();
     }, []);
     return (

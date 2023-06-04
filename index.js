@@ -1,5 +1,8 @@
 import { AppRegistry, LogBox } from 'react-native';
 import Toast from 'react-native-toast-message';
+import { Provider } from 'react-redux';
+
+import store from '~/reducers/store';
 
 import { config } from '~/scripts/toast';
 
@@ -16,10 +19,10 @@ LogBox.ignoreAllLogs(); //Ignore all log notifications
 const Root = () => {
     return (
         <>
-            {/* <Provider store={store}> */}
-            <App />
-            <Toast config={config} />
-            {/* </Provider> */}
+            <Provider store={store}>
+                <App />
+                <Toast config={config} />
+            </Provider>
         </>
     );
 };
