@@ -5,7 +5,7 @@ import thunk from 'redux-thunk';
 
 import { REHYDRATION_SET_REHYDRATION_VALUE } from '~/actions/types';
 
-import { AuthReducer } from '~/reducers/auth-store';
+import { AuthReducer } from '~/reducers/auth-reducer';
 import { ContainerReducer } from '~/reducers/container-reducer';
 // import { CounterReducer } from '~/reducers/counter-reducer';
 import { RehydrationReducer } from '~/reducers/rehydration-reducer';

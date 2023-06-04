@@ -7,6 +7,11 @@ import {
     COMPONENT_SCREEN,
     INPUT_SCREEN,
     RADIO_SCREEN,
+    SCREEN_FIVE,
+    SCREEN_FOUR,
+    SCREEN_ONE,
+    SCREEN_THREE,
+    SCREEN_TWO,
     TEXT_SCREEN,
     TOAST_SCREEN,
 } from '~/navigation/navigation-constant';
@@ -17,10 +22,13 @@ import InputScreen from '~/screens/main-screens/input-screen';
 import RadioScreen from '~/screens/main-screens/radio-screen';
 import TextScreen from '~/screens/main-screens/text-screen';
 import ToastScreen from '~/screens/main-screens/toast-screen';
+import ScreenFive from '~/screens/test-screens/screen-five';
+import ScreenFour from '~/screens/test-screens/screen-four';
+import ScreenOne from '~/screens/test-screens/screen-one';
+import ScreenThree from '~/screens/test-screens/screen-three';
+import ScreenTwo from '~/screens/test-screens/screen-two';
 
-import { SetScreenName } from '~/scripts/navigation-util';
-
-import { navigationRef } from '~/hooks/useLocation';
+import { SetScreenName, navigate, navigationRef } from '~/hooks/useLocation';
 
 enableScreens();
 const Stack = createNativeStackNavigator();
@@ -34,13 +42,14 @@ const Navigation = (props) => {
     return (
         <NavigationContainer ref={navigationRef}>
             <Stack.Navigator
-                initialRouteName={COMPONENT_SCREEN}
+                initialRouteName={SCREEN_ONE}
                 screenOptions={{
                     headerShown: false,
                 }}
                 screenListeners={{
                     state: (e) => {
-                        SetScreenName(e.data);
+                        SetScreenName('screen_listener', e.data);
+                        // navigate(e.data.state.routes[e.data.state.index].name);
                     },
                 }}
             >
@@ -60,6 +69,11 @@ const Navigation = (props) => {
                 />
                 <Stack.Screen name={TOAST_SCREEN} component={ToastScreen} />
                 <Stack.Screen name={RADIO_SCREEN} component={RadioScreen} />
+                <Stack.Screen name={SCREEN_ONE} component={ScreenOne} />
+                <Stack.Screen name={SCREEN_TWO} component={ScreenTwo} />
+                <Stack.Screen name={SCREEN_THREE} component={ScreenThree} />
+                <Stack.Screen name={SCREEN_FOUR} component={ScreenFour} />
+                <Stack.Screen name={SCREEN_FIVE} component={ScreenFive} />
             </Stack.Navigator>
         </NavigationContainer>
     );
