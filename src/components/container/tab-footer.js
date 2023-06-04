@@ -8,9 +8,9 @@ import Text from '~/components/library/text';
 const TabFooter = () => {
     return (
         <View style={tw``}>
-            <Text>abh</Text>
+            <Text>TabFooter</Text>
         </View>
     );
 };
 
-export default memo(TabFooter)
+export default memo(TabFooter);

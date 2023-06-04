@@ -31,8 +31,10 @@
         "@react-native-firebase/app": "^17.5.0",
         "@react-native-firebase/messaging": "^17.4.3",
         "@react-navigation/native": "^6.1.6",
+        "@react-native-async-storage/async-storage": "^1.17.11",
         "@react-navigation/native-stack": "^6.9.12",
-        "@redux-offline/redux-offline": "^2.6.0",
+        "@react-native-community/netinfo": "^9.3.7",
+        "@redux-offline/redux-offline": "2.6.0-native.1",
         "react": "18.2.0",
         "react-native": "0.71.7",
         "react-native-gesture-handler": "^2.9.0",
@@ -45,6 +47,14 @@
         "redux": "^4.1.2",
         "redux-thunk": "^2.4.1",
         "twrnc": "^3.6.1"
+    },
+    "dependenciesComments": {
+        "@react-native-async-storage/async-storage": "for react native redux offline",
+        "@react-native-firebase/app": "Base project dependency for all firebase projects",
+        "react-native-safe-area-context": "Dependency for react-navigation/native",
+        "react-native-screens": "Dependency for react-navigation/native",
+        "@react-navigation/native-stack": "new library alternative of  @react-navigation/native",
+        "@react-native-community/netinfo": "needed library for the redux offline"
     },
     "devDependencies": {
         "@babel/core": "^7.20.0",
