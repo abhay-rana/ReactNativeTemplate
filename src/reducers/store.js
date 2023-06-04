@@ -5,6 +5,7 @@ import thunk from 'redux-thunk';
 
 import { REHYDRATION_SET_REHYDRATION_VALUE } from '~/actions/types';
 
+import { AuthReducer } from '~/reducers/auth-store';
 import { ContainerReducer } from '~/reducers/container-reducer';
 // import { CounterReducer } from '~/reducers/counter-reducer';
 import { RehydrationReducer } from '~/reducers/rehydration-reducer';
@@ -14,6 +15,7 @@ import { APP_MODE } from '~/env';
 const reducers = combineReducers({
     rehydration_store: RehydrationReducer,
     container_store: ContainerReducer,
+    auth_store: AuthReducer,
     // counter_store: CounterReducer,
 });
 
