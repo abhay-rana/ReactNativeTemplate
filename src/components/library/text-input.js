@@ -1,8 +1,11 @@
 import React, { memo, useState } from 'react';
-import { TextInput as RNTextInput, View } from 'react-native';
+import { TextInput as RNTextInput, TouchableOpacity, View } from 'react-native';
 
 import tw from '~/styles/tailwind';
 import themeVar from '~/styles/theme-var';
+
+import EyeCloseSvg from '~/assets/svg/eye-close.svg';
+import EyeOpenSvg from '~/assets/svg/eye-open.svg';
 
 import Text from '~/components/library/text';
 
@@ -10,8 +13,7 @@ const TextInput = React.forwardRef(
     (
         {
             style,
-            light,
-            bold,
+            type = 'text',
             stacked,
             success,
             note,
@@ -20,6 +22,7 @@ const TextInput = React.forwardRef(
             large,
             label,
             onFocus,
+            disabled,
             onBlur,
             bordered,
             value,
@@ -32,6 +35,11 @@ const TextInput = React.forwardRef(
             labelColor: themeVar.gray.light,
             inputBorderColor: themeVar.gray.light,
         });
+
+        const [show_password, toggleShowPassword] = useState(false);
+        if (type === 'password') {
+            // then show the eye icon and eye icon is clickable then change the state
+        }
 
         const show_error = error != null;
         const show_success = success != null;
@@ -78,49 +86,77 @@ const TextInput = React.forwardRef(
             });
         };
 
+        const togglePasswordVisibility = () => {
+            toggleShowPassword(!show_password);
+        };
         return (
-            <View>
+            <View style={[tw`relative`]}>
                 {!!label ? (
-                    <Text
-                        style={[tw`text-sm`, { color: focusStyle.labelColor }]}
-                    >
-                        {label}
-                    </Text>
+                    <Text style={disabled && tw`text-gray-400`}>{label}</Text>
                 ) : null}
-
-                <RNTextInput
-                    ref={ref}
-                    {...props}
-                    multiline={multiline}
-                    value={value?.toString()}
-                    onFocus={onInputFocus}
-                    onBlur={onInputBlur}
-                    textAlignVertical={!!multiline ? 'top' : undefined}
-                    style={[
-                        tw`${input_style}`,
-                        style,
-                        {
-                            fontFamily: props.w200
-                                ? 'ProximaNovaLight'
-                                : props.w400
-                                ? 'ProximaNovaMedium'
-                                : props.w300
-                                ? 'ProximaNovaRegular'
-                                : props.w600
-                                ? 'ProximaNovaBold'
-                                : props.w700
-                                ? 'ProximaNovaExtraBold'
-                                : 'ProximaNovaSemiBold',
-                        },
-                        !!bordered
-                            ? { borderColor: focusStyle.borderColor }
-                            : !!stacked
-                            ? { borderBottomColor: focusStyle.borderColor }
-                            : null,
-                    ]}
-                    placeholderTextColor="#b7b7b7"
-                />
-
+                <View style={tw`relative`}>
+                    <RNTextInput
+                        ref={ref}
+                        multiline={multiline}
+                        editable={!disabled}
+                        value={value?.toString()}
+                        onFocus={onInputFocus}
+                        onBlur={onInputBlur}
+                        textAlignVertical={!!multiline ? 'top' : undefined}
+                        secureTextEntry={type === 'password' && !show_password}
+                        style={[
+                            tw`${input_style}`,
+                            style,
+                            disabled && tw`bg-gray-200`,
+                            {
+                                fontFamily: props.w200
+                                    ? 'ProximaNovaLight'
+                                    : props.w400
+                                    ? 'ProximaNovaMedium'
+                                    : props.w300
+                                    ? 'ProximaNovaRegular'
+                                    : props.w600
+                                    ? 'ProximaNovaBold'
+                                    : props.w700
+                                    ? 'ProximaNovaExtraBold'
+                                    : 'ProximaNovaSemiBold',
+                            },
+                            !!bordered
+                                ? {
+                                      borderColor: focusStyle.borderColor,
+                                  }
+                                : !!stacked
+                                ? { borderBottomColor: focusStyle.borderColor }
+                                : null,
+                            disabled && bordered && tw`border-gray-400`,
+                        ]}
+                        placeholderTextColor="#b7b7b7"
+                        {...props}
+                    />
+                    {type === 'password' ? (
+                        show_password ? (
+                            <TouchableOpacity
+                                style={tw`absolute top-3 right-4 transform -translate-y-1/2 ${
+                                    disabled ? 'text-gray-400' : 'text-gray-600'
+                                }`}
+                                onPress={togglePasswordVisibility}
+                                disabled={disabled}
+                            >
+                                <EyeOpenSvg width={20} height={20} />
+                            </TouchableOpacity>
+                        ) : (
+                            <TouchableOpacity
+                                style={tw`absolute top-3 right-4 transform -translate-y-1/2 ${
+                                    disabled ? 'text-gray-400' : 'text-gray-600'
+                                }`}
+                                onPress={togglePasswordVisibility}
+                                disabled={disabled}
+                            >
+                                <EyeCloseSvg width={20} height={20} />
+                            </TouchableOpacity>
+                        )
+                    ) : null}
+                </View>
                 {show_error || show_note || show_success ? (
                     <View style={tw`h-6`}>
                         {show_error ? (

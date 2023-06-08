@@ -34,6 +34,25 @@ const InputScreen = () => {
                     large
                 />
             </View>
+            <View style={tw`mt-4`}>
+                <TextInput
+                    label="this is label"
+                    placeholder="Enter Password"
+                    large
+                    type="password"
+                    bordered
+                />
+            </View>
+            <View style={tw`mt-4`}>
+                <TextInput
+                    label="this is label"
+                    placeholder="Enter Password"
+                    large
+                    type="password"
+                    bordered
+                    disabled
+                />
+            </View>
         </View>
     );
 };

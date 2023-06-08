@@ -1,13 +1,25 @@
 import { View } from 'react-native';
+import { connect } from 'react-redux';
 
 import tw from '~/styles/tailwind';
 
-const Container = ({ children }) => {
+import TabFooter from '~/components/container/tab-footer';
+
+const Container = ({ children, ...props }) => {
     return (
         <>
-            <View style={tw`flex-1`}>{children}</View>
+            {props.is_rehydrated ? (
+                <View style={tw`flex-1`}>
+                    {children}
+                    <TabFooter />
+                </View>
+            ) : null}
         </>
     );
 };
 
-export default Container;
+const mapStateToProps = (state) => ({
+    is_rehydrated: state.rehydration_store.is_rehydrated,
+});
+
+export default connect(mapStateToProps, null)(Container);
